@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>Terug naar het Mainframe</title></head>
+<body style="font-family:system-ui,sans-serif;padding:16px">
+<p id="t">Je wordt doorgestuurd naar het Mainframe op je eigen Mac...</p>
+<script>
+// Stuurt de terugkeer van Exact Online door naar het script op de eigen Mac (Scripts/Exact.py).
+// Hier staat niets geheims; de code van Exact werkt alleen samen met het secret in de .env van de Mac.
+var q = location.search;
+if (/[?&](code|error)=/.test(q)) {
+  location.replace("http://localhost:8765/exact" + q);
+} else {
+  document.getElementById("t").textContent = "Deze pagina hoort bij het inloggen bij Exact Online vanuit het Mainframe.";
+}
+</script>
+</body>
+</html>
